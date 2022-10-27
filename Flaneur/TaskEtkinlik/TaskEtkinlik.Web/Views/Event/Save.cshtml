@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewData["Title"] = "Save";
+}
+@model TaskEtkinlik.Core.DTOs.EventDto
+
+<h1>Save</h1>
+<form asp-action="Save" asp-controller="Event">
+    <div class="mb-3">
+        <label>UserName</label>
+        <input asp-for="@Model.Name" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label>Description</label>
+        <input type="text"  asp-for="@Model.Description" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label>Capacity</label>
+        <input asp-for="@Model.Capacity" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label>Stock</label>
+        <input asp-for="@Model.Stock" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label>Place</label>
+        <select asp-for="@Model.PlaceId" asp-items="ViewBag.places" class="form-control"></select>
+    </div>
+    <div class="mb-3">
+        <label>Category</label>
+        <select asp-for="@Model.CategoryId" asp-items="ViewBag.categories" class="form-control"></select>
+    </div>
+    <div class="mb-3">
+        <label>Description</label>
+        <input type="text" asp-for="@Model.ImagePath" class="form-control ">
+    </div>
+    <button type="submit">Save</button>
+
+</form>
+

@@ -1,0 +1,89 @@
+﻿
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="~/css/styleone.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;900&family=Sen:wght@400;700;800&display=swap" rel="stylesheet">
+    <link href="~/css/error.css" rel="stylesheet" />
+    <link href="~/css/menuonetwo.css" rel="stylesheet" />
+    @*<style>
+        a {
+            text-decoration: none;
+            color:white;
+        }
+    </style>*@
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <div class="navbar">
+        <div class="navbar-container">
+            <div class="logo-container"><h1 class="logo">Flaneur</h1></div>
+            <div class="menu-container">
+                <ul class="menu-list">
+                    <li class="menu-list-item active">Home</li>
+                    <li class="menu-list-item"><a asp-action="Index" asp-controller="Home">Movies</a></li>
+                    <li class="menu-list-item">Series</li>
+                    <li class="menu-list-item">Theatre</li>
+                    <li class="menu-list-item">Concert</li>
+                    
+
+
+                </ul>
+            </div>
+            <div class="profile-container">
+                <img class="profile-picture" src="~/css/images/profile.jpg" alt="">
+                <div class="profile-text-container">
+                    <div class="dropdown">
+                        <button class="dropbtn profile-text" onclick="myFunction()">
+                            Profile
+                            <i class="fa fa-caret-down"></i>
+                        </button>
+                        <div class="dropdown-content" id="myDropdown">
+                            <a asp-action="Login" asp-controller="Member">Login</a>
+                            <a asp-action="Save" asp-controller="Member">Register</a>
+                           @* @if (ViewBag.Hosgeldin!=null)
+                            {
+                                <a asp-action="Save" asp-controller="Member">Çıkış Yap</a>
+                            }*@
+                        </div>
+                    </div>
+                    @*  <span class="profile-text">Profile</span>*@
+                    @*   <i class="fa-solid fa-caret-down"></i>*@
+                </div>
+                <div class="toggle">
+                    <i class="fa-regular fa-lightbulb toggle-icon"></i>
+                    <i class="fa-solid fa-lightbulb toggle-icon"></i>
+                    <div class="toggle-ball">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="sidebar">
+        <a asp-action="Index" asp-controller="Home"><i class="left-menu-icon fa-solid fa-house"> </i></a>
+        <a asp-action="Index" asp-controller="Home"><i class="left-menu-icon fa-solid fa-magnifying-glass"></i></a>
+        <a asp-action="Login" asp-controller="Member"><i class="left-menu-icon fa-solid fa-user"></i></a>
+        <a asp-action="Index" asp-controller="Home"><i class="left-menu-icon fa-solid fa-bookmark"></i></a>
+        <a asp-action="Index" asp-controller="Home"><i class="left-menu-icon fa-solid fa-tv"></i></a>
+        <a asp-action="Index" asp-controller="Home"><i class="left-menu-icon fa-solid fa-hourglass-start"></i></a>
+        <a asp-action="Index" asp-controller="Home"><i class="left-menu-icon fa-solid fa-credit-card"></i></a>
+    </div>
+    <div class="container">
+
+        <div class="content-container">
+            @RenderBody()
+        </div>
+    </div>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+    <script src="~/js/app.js"></script>
+    <script src="~/js/ackapa.js"></script>
+</body>
+</html>

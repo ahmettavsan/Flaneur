@@ -1,0 +1,23 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model TaskEtkinlik.Core.DTOs.LoginDto
+@addTagHelper *,Microsoft.AspNetCore.Mvc.TagHelpers
+
+<div class="container">
+    <form asp-action="Login" method="post">
+        <div class="col-md-6">        
+            <input asp-for="@Model.UserName" type="text" placeholder="Kullanıcı Adı" class="bn632-hover bn22">
+        </div>
+        <div class="col-md-6">
+            <input asp-for="@Model.Password" placeholder="Password" type="password" class="bn632-hover bn22">
+        </div>
+        <div>
+            <button class="bn632-hover bn22" type="submit">Login</button>
+        </div>
+    </form>
+
+</div>
+
+
+

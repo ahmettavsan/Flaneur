@@ -1,0 +1,27 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model TaskEtkinlik.Core.DTOs.CreateUserDto
+@addTagHelper *,Microsoft.AspNetCore.Mvc.TagHelpers
+
+<form asp-action="Save" method="post" class="p-3 w-75 mx-auto shadow">
+   <div class="mb-3">
+        <label>UserName</label>
+        <input asp-for="@Model.UserName" class="form-control" >
+   </div>
+    <div class="mb-3">
+        <label>Name</label>
+        <input asp-for="@Model.Name" class="form-control">
+    </div><div class="mb-3">
+        <label>Surname</label>
+        <input asp-for="@Model.Surname" class="form-control">
+    </div><div class="mb-3">
+        <label>Password</label>
+        <input asp-for="@Model.Password" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label>Password</label>
+        <input asp-for="@Model.Email" class="form-control">
+    </div>
+    <button type="submit">Register</button>
+</form>

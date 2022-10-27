@@ -1,0 +1,15 @@
+﻿@using TaskEtkinlik.Core.DTOs
+@model EventDto
+
+
+<div class="featured-content" style="background: linear-gradient(to bottom, rgba(0,0,0,0),#151515),url('@Url.Content(Model.ImagePath)');">
+    @*<img class="fatured-title" src="~/css/images/f-t-1.png" alt="">*@
+    <p class="featured-desc" style="font-size:40px;">@Model.Name</p>
+    <p class="featured-desc">Lorem ipsum dolor sit amet conseecto fuga esse, saepe nam dolor error blanditiis facilis dolores quibusdam iure.</p>  
+    <a asp-action="AddTicket" asp-controller="Basket" asp-route-id="@Model.Id" class="fetured-button">Add</a>  
+    <a asp-action="AddTicket" asp-controller="Basket" asp-route-id="@Model.Id" class="fetured-button">
+        <i class="fa-regular fa-bookmark"></i>
+    </a>    
+   @* <iframe width="640" height="400" src="https://www.youtube.com/embed/tgbNymZ7vqY">
+    </iframe>*@
+</div>
